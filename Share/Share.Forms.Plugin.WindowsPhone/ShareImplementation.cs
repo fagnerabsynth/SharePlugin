@@ -21,34 +21,33 @@ namespace /* alterar colocar o namespace */ Share.Forms.Plugin.WindowsPhone
 
         }
 
-		public void ShareStatus (string status)
-		{
-			var task = new ShareStatusTask {Status = status};
-			Device.BeginInvokeOnMainThread(() =>
-				{
-					try
-					{
-						task.Show();
-					}
-					catch (Exception ex)
-					{;
-					}
-				});
-		}
+	 public void ShareStatus(string status)
+        {
+            ShareLink("", status, "");
+        }
 
-		public void ShareLink (string title, string status, string link)
-		{
-			var task = new ShareLinkTask {Title = title, Message = status, LinkUri = new Uri(link)};
-			Device.BeginInvokeOnMainThread(() =>
-				{
-					try
-					{
-						task.Show();
-					}
-					catch (Exception ex)
-					{;
-					}
-				});
-		}
+        public void ShareLink(string title = "", string status = "", string link = "")
+        {
+
+            Uri uriResult;
+            bool isUriValid = Uri.TryCreate(link, UriKind.Absolute, out uriResult) && uriResult.Scheme == Uri.UriSchemeHttp;
+
+            if (isUriValid)
+            {
+                ShareLinkTask shareLinkTask = new ShareLinkTask();
+                shareLinkTask.Title = title;
+                shareLinkTask.Message = status;
+                shareLinkTask.LinkUri = new Uri(link, UriKind.Absolute);
+                shareLinkTask.Show();
+
+            }
+            else
+            {
+                ShareStatusTask shareStatusTask = new ShareStatusTask();
+                shareStatusTask.Status = title + status;
+                shareStatusTask.Show();
+            }
+
+        }
     }
 }
