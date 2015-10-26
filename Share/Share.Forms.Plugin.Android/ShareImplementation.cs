@@ -1,5 +1,5 @@
 
- /* using da namespace da interface */
+ /* using da namespace da interface na PCL */
 
 using System;
 using Xamarin.Forms;
