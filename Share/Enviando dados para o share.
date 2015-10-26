@@ -1,0 +1,7 @@
+        //adicone o using  da interface 
+        
+        private void share(object sender, EventArgs e)
+        {
+            var compartilhar = DependencyService.Get<IShare>();
+            compartilhar.ShareLink("titulo", "texto" , "link");
+        }
