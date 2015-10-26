@@ -1,14 +1,18 @@
-﻿using Share.Forms.Plugin.Abstractions;
+ /* using da namespace da interface */
+ 
 using System;
 using Xamarin.Forms;
-using Share.Forms.Plugin.WindowsPhone;
+
+ /* using namespace do seu projeto */
+ 
 using Windows.Devices.Sensors;
 using System.Windows;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Tasks;
 
 [assembly: Dependency(typeof(ShareImplementation))]
-namespace Share.Forms.Plugin.WindowsPhone
+
+namespace /* alterar colocar o namespace */ Share.Forms.Plugin.WindowsPhone
 {
     public class ShareImplementation : IShare
     {
