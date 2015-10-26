@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace Share.Forms.Plugin.Abstractions
+namespace /* troque para o namespace da sua interface PCL */ Share.Forms.Plugin.Abstractions
 {
 	public interface IShare
 	{
