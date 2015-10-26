@@ -2,7 +2,7 @@
  
 using System;
 using Xamarin.Forms;
-using Share.Forms.Plugin.iOS;
+
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using MonoTouch.Social;
