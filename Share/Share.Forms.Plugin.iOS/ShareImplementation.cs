@@ -1,13 +1,15 @@
-﻿using Share.Forms.Plugin.Abstractions;
+ /* using da namespace da interface na PCL */
+ 
 using System;
 using Xamarin.Forms;
 using Share.Forms.Plugin.iOS;
 using MonoTouch.UIKit;
 using MonoTouch.Foundation;
 using MonoTouch.Social;
+ /* using namespace do seu projeto */
 
 [assembly: Dependency(typeof(ShareImplementation))]
-namespace Share.Forms.Plugin.iOS
+namespace  /* alterar colocar o namespace */ Share.Forms.Plugin.iOS
 {
     public class ShareImplementation : IShare
     {
